@@ -7,8 +7,30 @@ import { NavLink } from 'fluxible-router'
 import HeaderBar from '../general/HeaderBar'
 import { RouteStore } from 'fluxible-router'
 import PostStore from '../../stores/PostStore'
+import DisqusThread from 'react-disqus-thread'
 import { connectToStores } from 'fluxible/addons'
 import RelativePostTime from '../general/RelativePostTime'
+
+const PostItemComments = React.createClass({
+  propTypes: {
+    title: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired
+  },
+
+  render () {
+    const { name, title } = this.props
+
+    return (
+      <section className='post-item-comments'>
+        <DisqusThread
+          shortname='cesarandreu-blog'
+          identifier={name}
+          title={title}
+        />
+      </section>
+    )
+  }
+})
 
 const PostItemHeader = React.createClass({
   propTypes: {
@@ -93,6 +115,11 @@ let PostItem = React.createClass({
             <article
               className='post-item-content'
               dangerouslySetInnerHTML={{__html: post.get('body')}}
+            />
+
+            <PostItemComments
+              name={post.get('name')}
+              title={post.get('title')}
             />
           </article>
         </div>
