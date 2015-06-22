@@ -1,0 +1,75 @@
+@import "../styles/typography.less";
+@import "../styles/colors.less";
+@import "../styles/sizes.less";
+
+.post-item-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-item {
+  max-width: 38em;
+  width: 100%;
+
+  padding: 0 0 24px;
+  @media @device-small {
+    padding: 0 16px 24px;
+  }
+}
+
+.post-item-header {
+  position: relative;
+  padding-top: 8px;
+  width: 100%;
+}
+
+.post-item-title {
+  display: flex;
+  align-items: center;
+  color: @text-color;
+  position: absolute;
+
+  height: 30vh;
+  max-height: 256px;
+  min-height: 192px;
+
+  width: 100%;
+  bottom: 100%;
+  margin: 0;
+
+  font-size: 4.500rem;
+  font-weight: 400;
+  line-height: 4.800rem;
+  @media @device-small {
+    font-size: 3.400rem;
+    font-weight: 400;
+    line-height: 4rem;
+  }
+}
+
+.post-item-information {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.post-item-permalink {
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  height: 20px;
+
+  color: @secondary-text-color;
+  &:hover, &:focus {
+    color: @secondary-text-color;
+    text-decoration: underline;
+  }
+}
+
+.post-item-content {
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+}
