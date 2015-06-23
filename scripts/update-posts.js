@@ -7,6 +7,9 @@ import inflection from 'inflection'
 import debug from 'debug'
 import path from 'path'
 
+/**
+ * Update database posts using the files located in "../public/blog"
+ */
 const log = debug('quad-blog:scripts:update-posts')
 const { database } = configMaker()
 database.logging = log

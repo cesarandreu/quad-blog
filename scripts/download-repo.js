@@ -1,4 +1,10 @@
 #!/usr/bin/env iojs -r babel/register
+
+/**
+ * Download the blog repo to the destination
+ * The repo is "https://github.com/cesarandreu/blog.git"
+ * The destination is "../public/blog"
+ */
 import downloadRepo from '../utils/download-repo'
 import path from 'path'
 
