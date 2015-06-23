@@ -12,6 +12,7 @@ import FetcherPlugin from './lib/FetcherPlugin'
 import Application from './components/Application'
 
 // Stores
+import ApplicationStore from './stores/ApplicationStore'
 import PostStore from './stores/PostStore'
 import RouteStore from './stores/RouteStore'
 
@@ -19,6 +20,7 @@ import RouteStore from './stores/RouteStore'
 const app = new Fluxible({
   component: Application,
   stores: [
+    ApplicationStore,
     PostStore,
     RouteStore
   ]
