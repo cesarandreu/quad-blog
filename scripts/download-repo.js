@@ -1,6 +1,6 @@
 #!/usr/bin/env iojs -r babel/register
-const downloadRepo = require('../utils/download-repo')
-const path = require('path')
+import downloadRepo from '../utils/download-repo'
+import path from 'path'
 
 const destination = path.resolve(__dirname, '../public/blog')
 const repoUrl = process.argv[2] || 'https://github.com/cesarandreu/blog.git'

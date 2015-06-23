@@ -1,13 +1,14 @@
 #!/usr/bin/env iojs -r babel/register
-const log = require('debug')('quad-blog:scripts:update-posts')
-const readPosts = require('../utils/read-posts')
-const syncPosts = require('../utils/sync-posts')
-const inflection = require('inflection')
-const modelLoader = require('../models')
-const configMaker = require('../config')
-const path = require('path')
+import readPosts from '../utils/read-posts'
+import syncPosts from '../utils/sync-posts'
+import modelLoader from '../models'
+import configMaker from '../config'
+import inflection from 'inflection'
+import debug from 'debug'
+import path from 'path'
 
-const {database} = configMaker()
+const log = debug('quad-blog:scripts:update-posts')
+const { database } = configMaker()
 database.logging = log
 
 const models = modelLoader(database)
