@@ -85,6 +85,7 @@
     "sequelize-cli": "^1.7.0",
     "sequelize-migration-pg-extras": "^1.0.1",
     "serialize-javascript": "^1.0.0",
+    "shelljs": "^0.5.1",
     "source-map-support": "^0.3.1",
     "stats-webpack-plugin": "^0.1.2",
     "webpack": "^1.9.10",
