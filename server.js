@@ -43,7 +43,7 @@ if (server.env === 'development') {
 server.use(responseTime())
 
 // compression
-server.use(compress())
+// server.use(compress())
 
 // file server
 server.use(serve('./public'))
