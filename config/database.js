@@ -19,8 +19,8 @@ module.exports = {
   },
   production: {
     username: process.env.DB_USERNAME || null,
-    password: null,
-    database: 'quad_blog',
+    password: process.env.DB_PASSWORD || null,
+    database: process.env.DB_DATABASE || 'quad_blog',
     host: '127.0.0.1',
     dialect: 'postgres'
   }
