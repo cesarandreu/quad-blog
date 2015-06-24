@@ -42,9 +42,6 @@ if (server.env === 'development') {
 // x-response-time
 server.use(responseTime())
 
-// compression
-// server.use(compress())
-
 // file server
 server.use(serve('./public'))
 
