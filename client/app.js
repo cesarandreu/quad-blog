@@ -1,5 +1,4 @@
 // Styles
-require('./components/styles/imports.less')
 require('./components/styles/base.less')
 
 // Modules
