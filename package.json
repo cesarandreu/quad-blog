@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -rf public build",
     "build": "npm run build:client && npm run build:server",
-    "build:server": "webpack --config webpack.server.js --bail",
+    "build:server": "webpack --config webpack.production.js --bail",
     "build:client": "webpack --config webpack.build.js --bail -p",
     "db:create": "create_database",
     "db:drop": "drop_database",

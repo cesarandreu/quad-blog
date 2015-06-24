@@ -37,7 +37,7 @@ module.exports = function makeWebpackConfig (options) {
     const output = {}
     output.path = __dirname + (SERVER ? '/build' : '/public/assets')
     output.pathinfo = !BUILD || SERVER
-    output.publicPath = BUILD || SERVER ? '/assets/' : 'http://localhost:8080/assets/'
+    output.publicPath = BUILD || (BUILD && SERVER) ? '/assets/' : 'http://localhost:8080/assets/'
     output.libraryTarget = SERVER ? 'commonjs2' : 'var'
     output.filename = SERVER
       ? 'server.js'
