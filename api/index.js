@@ -1,7 +1,7 @@
 const log = require('debug')('quad-blog:api:loader')
 const controllerLoader = require('./controllers')
 const middleware = require('./utils/middleware')
-const compose = require('composition')
+const compose = require('koa-compose')
 const assert = require('assert')
 
 /**

@@ -21,7 +21,6 @@ const api = apiLoader({models})
  */
 const server = qs(koa())
 Object.assign(server, {
-  experimental: true,
   env: config.env,
   config,
   models,
