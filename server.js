@@ -1,7 +1,6 @@
 const koa = require('koa')
 const qs = require('koa-qs')
 const serve = require('koa-static')
-const compress = require('koa-compress')
 const log = require('debug')('quad-blog:server')
 const responseTime = require('koa-response-time')
 
