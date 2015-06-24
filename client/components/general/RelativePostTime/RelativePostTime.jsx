@@ -8,12 +8,14 @@ const RelativePostTime = React.createClass({
 
   render () {
     const { createdAt } = this.props
+    const createdAtMoment = moment(createdAt)
+
     return (
       <time
         dateTime={createdAt}
-        title={moment(createdAt).format('dddd, MMMM Do YYYY, h:mm:ss a')}
+        title={createdAtMoment.format('dddd, MMMM Do YYYY, h:mm:ss a')}
       >
-        {moment(createdAt).fromNow()}
+        {createdAtMoment.fromNow()}
       </time>
     )
   }
