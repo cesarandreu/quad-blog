@@ -1,5 +1,4 @@
 const log = require('debug')('quad-blog:api:controllers')
-// const compose = require('composition')
 
 /**
  * List of controllers to load
@@ -25,10 +24,6 @@ module.exports = function controllerLoader () {
   }, {})
 
   // Get middleware
-  // const middleware = compose(Object.keys(controllers).map(name => {
-  //   log(`getting middleware for ${name} controller`)
-  //   return controllers[name]()
-  // }))
   const middleware = Object.keys(controllers).map(name => {
     log(`getting middleware for ${name} controller`)
     return controllers[name]()
