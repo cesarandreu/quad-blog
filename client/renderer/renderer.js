@@ -9,14 +9,14 @@ import {navigateAction} from 'fluxible-router'
 
 const log = debug('quad-blog:client:renderer')
 export default function renderer ({scripts=[], styles=[]}={}) {
-  return async function rendererMiddleware () {
+  return function * rendererMiddleware () {
     const rootUrl = `${this.protocol}://${this.host}`
     const context = app.createContext({ fetch, rootUrl })
 
     log('Executing navigate action')
     try {
       const url = this.url
-      await context.executeAction(navigateAction, { url })
+      yield context.executeAction(navigateAction, { url })
     } catch (err) {
       log('Navigate error', err)
       if (err.status || err.statusCode) {
