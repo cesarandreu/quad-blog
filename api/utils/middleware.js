@@ -6,9 +6,9 @@ const assert = require('assert')
  * @returns {function} addToContextMiddleware
  */
 exports.addToContext = function addToContext (objects={}) {
-  return async function addToContextMiddleware (next) {
+  return function * addToContextMiddleware (next) {
     Object.assign(this, objects)
-    await next
+    yield next
   }
 }
 
@@ -25,14 +25,14 @@ exports.addToContext = function addToContext (objects={}) {
  */
 exports.load = function load (resource, { key='id', name=resource.toLowerCase() }={}) {
   assert(resource, 'load middleware required a resource')
-  return async function loadMiddleware (next) {
-    this.state[name] = await this.models[resource].find({
+  return function * loadMiddleware (next) {
+    this.state[name] = yield this.models[resource].find({
       where: {
         [key]: this.params[name]
       }
     })
 
     this.assert(this.state[name], 404, `${resource} not found`)
-    await next
+    yield next
   }
 }
