@@ -1,8 +1,6 @@
 const middleware = require('../utils/middleware')
-const compose = require('composition')
 const Router = require('koa-router')
 
-// @TODO: Replace koa-router with an async function friendly router
 export default function PostsController () {
   // Middleware
   const loadPost = middleware.load('Post', {
@@ -15,16 +13,12 @@ export default function PostsController () {
   })
   .get(
     '/posts',
-    compose([
       PostsController.index
-    ])
   )
   .get(
     '/posts/:post',
-    compose([
       loadPost,
       PostsController.show
-    ])
   )
 
   return routes.middleware()
@@ -33,9 +27,9 @@ export default function PostsController () {
 /**
  * GET /api/posts
  */
-PostsController.index = async function index () {
+PostsController.index = function * index () {
   const {Post} = this.models
-  this.body = await Post.findAll({
+  this.body = yield Post.findAll({
     order: [
       ['createdAt', 'DESC']
     ]
@@ -45,6 +39,6 @@ PostsController.index = async function index () {
 /**
  * GET /api/posts/:post
  */
-PostsController.show = async function show () {
+PostsController.show = function * show () {
   this.body = this.state.post
 }
