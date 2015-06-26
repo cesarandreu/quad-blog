@@ -41,6 +41,7 @@ if (server.env === 'development') {
 server.use(responseTime())
 
 // file server
+server.use(serve('./static'))
 server.use(serve('./public'))
 
 /**
