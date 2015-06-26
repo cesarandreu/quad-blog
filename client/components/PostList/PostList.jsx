@@ -62,7 +62,7 @@ let PostList = React.createClass({
           { property: 'og:url', content: canonical }
         ]}
         link={[
-          { rel: 'canonical', href: title }
+          { rel: 'canonical', href: canonical }
         ]}
       >
         <div className='post-list-page'>
