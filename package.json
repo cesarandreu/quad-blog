@@ -28,6 +28,9 @@
     "web",
     "application"
   ],
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "author": "Cesar Andreu <cesarandreu@gmail.com> (https://github.com/cesarandreu)",
   "license": "MIT",
   "bugs": {
@@ -111,5 +114,6 @@
     "phantomjs-polyfill": "0.0.1",
     "react-hot-loader": "^1.2.7",
     "webpack-dev-server": "^1.9.0"
+    "standard": "^4.5.2",
   }
 }
