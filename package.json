@@ -77,7 +77,7 @@
     "pg-hstore": "^2.3.2",
     "postcss-loader": "^0.5.1",
     "pygmentize-bundled": "^2.3.0",
-    "qs": "^3.1.0",
+    "qs": "^4.0.0",
     "react": "^0.13.3",
     "react-disqus-thread": "^0.2.2",
     "react-helmet": "^1.1.0",
