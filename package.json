@@ -18,7 +18,8 @@
     "dev:server": "npm run dev:server:webpack & npm run dev:server:nodemon",
     "dev:server:webpack": "webpack --config webpack.server.js --watch",
     "dev:server:nodemon": "nodemon -e js,json -w ./build/ ./build/server.js",
-    "predev:server:nodemon": "mkdirp build && touch ./build/server.js"
+    "predev:server:nodemon": "mkdirp build && touch ./build/server.js",
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
